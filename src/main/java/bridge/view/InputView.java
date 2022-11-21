@@ -25,8 +25,12 @@ public class InputView {
     /**
      * 사용자가 이동할 칸을 입력받는다.
      */
-    public String readMoving() {
-        return null;
+    public char readMoving() {
+        String moves = Console.readLine();
+        if(moves.length() != 1) throw new IllegalArgumentException("[ERROR] 한 자의 문자만 입력해 주세요.");
+        char move = moves.charAt(0);
+        if(move != 'U' || move != 'D') throw new IllegalArgumentException("[ERROR] 형식에 맞는 문자를 입력해주세요.");
+        return move;
     }
 
     /**
