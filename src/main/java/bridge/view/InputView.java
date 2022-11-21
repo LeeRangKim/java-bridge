@@ -36,7 +36,11 @@ public class InputView {
     /**
      * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
      */
-    public String readGameCommand() {
-        return null;
+    public char readGameCommand() {
+        String games = Console.readLine();
+        if(games.length() != 1) throw new IllegalArgumentException("[ERROR] 한 자의 문자만 입력해 주세요.");
+        char game = games.charAt(0);
+        if(game != 'R' || game != 'Q') throw new IllegalArgumentException("[ERROR] 형식에 맞는 문자를 입력해주세요.");
+        return game;
     }
 }
